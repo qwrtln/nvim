@@ -7,6 +7,7 @@ require("filetype").setup {
         html = "html",
         sh = "sh",
         md = "markdown",
+        tpl = "helm",
       },
     },
   }

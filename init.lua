@@ -1,5 +1,6 @@
-require("options")
+require("helm_ls_config")
 require("mappings")
+require("options")
 require("plugins")
 
 -- enable filetypee.lua
