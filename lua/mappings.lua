@@ -16,3 +16,6 @@ map("n", "<C-q>", "<cmd>:q!<CR>", options)
 map("n", "<C-\\>", "<cmd>:CommentToggle<CR>", options)
 map("x", "<C-\\>", "<Esc><cmd>:'<,'>CommentToggle<CR>", options)
 
+-- terminal
+map("t", "jk", "<C-\\><C-n>", options)
+map("t", "<Esc>", "<C-\\><C-n>", options)
