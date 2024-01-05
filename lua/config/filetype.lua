@@ -8,6 +8,7 @@ require("filetype").setup {
         sh = "sh",
         md = "markdown",
         tpl = "helm",
+        py = "python",
       },
     },
   }

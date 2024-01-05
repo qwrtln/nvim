@@ -54,6 +54,7 @@ packer.startup(function(use)
     "neovim/nvim-lspconfig",
     config = function()
       -- require("vscode-html-languageserver").setup()
+      require'lspconfig'.pyright.setup{}
     end
   })
 
@@ -62,7 +63,7 @@ packer.startup(function(use)
     config = get_config("filetype"),
   })
 
-  use("hashivim/vim-terraform")
+  -- use("hashivim/vim-terraform")
 
   use("SmiteshP/nvim-navic")
 
@@ -81,6 +82,13 @@ packer.startup(function(use)
     "terrortylor/nvim-comment",
     config = function()
       require('nvim_comment').setup()
+    end
+  }
+
+  use{
+    "lewis6991/gitsigns.nvim",
+    config = function()
+      require('gitsigns').setup()
     end
   }
 
