@@ -60,6 +60,7 @@ vim.g.tokyonight_transparent = "true"
 vim.cmd[[colorscheme tokyonight]]
 vim.cmd[[highlight Normal ctermbg=NONE guibg=NONE]]
 vim.cmd[[highlight NormalNC ctermbg=NONE guibg=NONE]]
+vim.cmd[[highlight SignColumn guibg=NONE]]
 
 -- this setting is global and should be set only once
 vim.o.updatetime = 300  -- can be reduced
