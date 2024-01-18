@@ -58,10 +58,10 @@ packer.startup(function(use)
     end
   })
 
-  use({
-    "nathom/filetype.nvim",
-    config = get_config("filetype"),
-  })
+  -- use({
+  --   "nathom/filetype.nvim",
+  --   config = get_config("filetype"),
+  -- })
 
   -- use("hashivim/vim-terraform")
 

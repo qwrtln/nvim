@@ -3,7 +3,7 @@ require("mappings")
 require("options")
 require("plugins")
 
--- enable filetypee.lua
+-- enable filetype.lua
 -- This feature is currently opt-in
 -- as it does not yet completely match all of the filetypes covered by filetype.vim
 vim.g.do_filetype_lua = true
