@@ -73,3 +73,6 @@ vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
     })
   end
 })
+
+-- Helm
+require("config/helm_ls_config")

@@ -58,13 +58,6 @@ packer.startup(function(use)
     end
   })
 
-  -- use({
-  --   "nathom/filetype.nvim",
-  --   config = get_config("filetype"),
-  -- })
-
-  -- use("hashivim/vim-terraform")
-
   use("SmiteshP/nvim-navic")
 
   use({
@@ -95,4 +88,3 @@ packer.startup(function(use)
   use("towolf/vim-helm")
 
 end)
-
