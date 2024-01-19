@@ -1,7 +1,6 @@
 -- Eviline config for lualine
 -- Author: shadmansaleh
 -- Credit: glepnir
-local lualine = require('lualine')
 
 -- Color table for highlights
 -- stylua: ignore
@@ -73,7 +72,7 @@ local function ins_left(component)
   table.insert(config.sections.lualine_c, component)
 end
 
--- Inserts a component in lualine_x ot right section
+-- Inserts a component in lualine_x at right section
 local function ins_right(component)
   table.insert(config.sections.lualine_x, component)
 end
@@ -200,7 +199,7 @@ ins_right {
 ins_right {
   'diff',
   -- Is it me or the symbol for modified us really weird
-  symbols = { added = ' ', modified = '柳 ', removed = ' ' },
+  symbols = { added = ' ', modified = '󰝤 ', removed = ' ' },
   diff_color = {
     added = { fg = colors.green },
     modified = { fg = colors.orange },
@@ -217,6 +216,14 @@ ins_right {
   padding = { left = 1 },
 }
 
--- Now don't forget to initialize lualine
-lualine.setup(config)
-
+return {
+    "nvim-lualine/lualine.nvim",
+    init = function()
+      require('lualine').setup(config)
+    end,
+    event = "VimEnter",
+    dependencies = {
+      { "nvim-tree/nvim-web-devicons", opt = true },
+      -- { "datamonsterr/nvim-dracula" },
+    },
+  }

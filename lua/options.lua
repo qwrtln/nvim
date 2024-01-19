@@ -52,18 +52,8 @@ vim.cmd "set whichwrap+=<,>,[,],h,l"
 -- vim.cmd([[autocmd BufRead,BufNewFile *.tf,*.tfvars set filetype=terraform]])
 -- vim.cmd([[autocmd BufRead,BufNewFile *.tfstate,*.tfstate.backup set filetype=json]])
 
--- Colorscheme
-vim.g.tokyonight_style = "night"
-vim.g.tokyonight_italic_functions = true
-vim.g.tokyonight_sidebars = { "qf", "vista_kind", "terminal", "packer" }
-vim.g.tokyonight_transparent = "true"
-vim.cmd[[colorscheme tokyonight]]
-vim.cmd[[highlight Normal ctermbg=NONE guibg=NONE]]
-vim.cmd[[highlight NormalNC ctermbg=NONE guibg=NONE]]
-vim.cmd[[highlight SignColumn guibg=NONE]]
-
 -- this setting is global and should be set only once
-vim.o.updatetime = 300  -- can be reduced
+-- vim.o.updatetime = 300  -- can be reduced
 vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
   group = vim.api.nvim_create_augroup("float_diagnostic", { clear = true }),
   callback = function ()
@@ -73,6 +63,3 @@ vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
     })
   end
 })
-
--- Helm
-require("config/helm_ls_config")
