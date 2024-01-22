@@ -223,7 +223,6 @@ return {
     end,
     event = "VimEnter",
     dependencies = {
-      { "nvim-tree/nvim-web-devicons", opt = true },
-      -- { "datamonsterr/nvim-dracula" },
+      { "nvim-tree/nvim-web-devicons" },
     },
   }

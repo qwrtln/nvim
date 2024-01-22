@@ -45,15 +45,6 @@ end
 
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 
--- Terraform files
--- vim.cmd([[silent! autocmd! filetypedetect BufRead,BufNewFile *.tf]])
--- vim.cmd([[autocmd BufRead,BufNewFile *.hcl set filetype=hcl]])
--- vim.cmd([[autocmd BufRead,BufNewFile .terraformrc,terraform.rc set filetype=hcl]])
--- vim.cmd([[autocmd BufRead,BufNewFile *.tf,*.tfvars set filetype=terraform]])
--- vim.cmd([[autocmd BufRead,BufNewFile *.tfstate,*.tfstate.backup set filetype=json]])
-
--- this setting is global and should be set only once
--- vim.o.updatetime = 300  -- can be reduced
 vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
   group = vim.api.nvim_create_augroup("float_diagnostic", { clear = true }),
   callback = function ()
