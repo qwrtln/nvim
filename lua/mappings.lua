@@ -16,4 +16,4 @@ map("n", "<C-q>", "<cmd>:q!<CR>", options)
 -- terminal
 map("t", "jk", "<C-\\><C-n>", options)
 map("t", "<Esc>", "<C-\\><C-n>", options)
-map("n", "<C-t>", "<cmd>:vsp<CR><cmd>:terminal<CR>i", options)
+map("n", "<S-t>", "<cmd>:vsp<CR><cmd>:terminal<CR>i", options)

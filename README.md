@@ -12,8 +12,6 @@ Make sure you have installed the following:
 
 Optionally, you can install LSPs:
  - [pyright](https://github.com/microsoft/pyright)
- - [terraform-ls](https://github.com/hashicorp/terraform-ls)
- - [helm-ls](https://github.com/emacs-lsp/helm-lsp)
  - [lua-language-server](https://github.com/LuaLS/lua-language-server)
 
 ## 🔦 Highlights
@@ -27,8 +25,9 @@ Then, run `:Lazy` to install plugins.
 ### 😎 Interesting Key Bindings
 
  - `<C-g>` opens a popup window with recursive grep search in the current directory. Blazing fast ⚡ thanks to `ripgrep`.
- - `<C-f>` does the same but with file names. Superfast thanks to `fzf` 🔥
- - `<C-t>` opens a terminal in vertical split on the right already in insert mode. Ready to type commands 👨‍💻
+ - `<S-f>` does the same but with file names. Superfast thanks to `fzf` 🔥
+ - `<S-t>` opens a terminal in vertical split on the right already in insert mode. Ready to type commands 👨‍💻
+ - `<C-s>` shows git diff of the current line thanks to `gitsigns`.
  - `<C-|>` (un)comments either current line, or visually selected block of code 🔎
 
 
@@ -38,8 +37,6 @@ Then, run `:Lazy` to install plugins.
  - [lualine](https://github.com/nvim-lualine/lualine.nvim)
  - [nvim-comment](https://github.com/terrortylor/nvim-comment)
  - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
- - [nvim-navic](https://github.com/SmiteshP/nvim-navic)
  - [telescope](https://github.com/nvim-telescope/telescope.nvim)
  - [tokyonight](https://github.com/folke/tokyonight.nvim)
  - [treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
- - [vim-helm](https://github.com/towolf/vim-helm)
