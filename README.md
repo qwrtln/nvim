@@ -35,6 +35,7 @@ Then, run `:Lazy` to install plugins.
 
  - [gitsigns](https://github.com/lewis6991/gitsigns.nvim)
  - [lualine](https://github.com/nvim-lualine/lualine.nvim)
+ - [neogit](https://github.com/NeogitOrg/neogit)
  - [nvim-comment](https://github.com/terrortylor/nvim-comment)
  - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
  - [telescope](https://github.com/nvim-telescope/telescope.nvim)
