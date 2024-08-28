@@ -1,4 +1,3 @@
-local map = vim.api.nvim_set_keymap
 local cmd = vim.api.nvim_create_user_command
 
 cmd("Neo", "Neogit", {})
