@@ -1,13 +1,14 @@
 return {
   "folke/tokyonight.nvim",
+  opts = {
+    transparent = true,
+    style = "night",
+    styles = {
+      sidebars = "transparent",
+      floats = "transparent",
+    }
+  },
   init = function()
-    vim.g.tokyonight_style = "night"
-    vim.g.tokyonight_italic_functions = true
-    vim.g.tokyonight_sidebars = { "qf", "vista_kind", "terminal", "packer" }
-    vim.g.tokyonight_transparent = "true"
-    vim.cmd[[colorscheme tokyonight-night]]
-    vim.cmd[[highlight Normal ctermbg=NONE guibg=NONE]]
-    vim.cmd[[highlight NormalNC ctermbg=NONE guibg=NONE]]
-    vim.cmd[[highlight SignColumn guibg=NONE]]
+    vim.cmd[[colorscheme tokyonight]]
   end,
 }
