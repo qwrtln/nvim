@@ -6,7 +6,7 @@ map("x", "<C-\\>", "<Esc><cmd>:'<,'>CommentToggle<CR>", options)
 
 return {
   "terrortylor/nvim-comment",
-  init = function(plugin)
+  init = function()
     require('nvim_comment').setup()
   end
 }
