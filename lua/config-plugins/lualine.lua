@@ -1,20 +1,21 @@
-  -- catputchin mocha palette: https://github.com/catppuccin/tmux/blob/main/themes/catppuccin_mocha.tmuxtheme
+-- catputchin mocha palette: https://github.com/catppuccin/tmux/blob/main/themes/catppuccin_mocha.tmuxtheme
+-- stylua: ignore
 local colors = {
   background = "#1e1e2e",
   foreground = "#cdd6f4",
-  black = "#181825",
-  blue = "#89b4fa",
-  cyan = "#89dceb",
-  grey = "#313244",
-  green = "#a6e3a1",
-  magenta = "#cba6f7",
-  orange = "#fab387",
-  pink = "#f5c2e7",
-  red = "#f38ba8",
-  white = "#c6c6c6",
-  yellow = "#f9e2af",
-  violet = "#d183e8",
-  black4 = "#585b70",
+  black      = "#181825",
+  blue       = "#89b4fa",
+  cyan       = "#89dceb",
+  grey       = "#313244",
+  green      = "#a6e3a1",
+  magenta    = "#cba6f7",
+  orange     = "#fab387",
+  pink       = "#f5c2e7",
+  red        = "#f38ba8",
+  white      = "#c6c6c6",
+  yellow     = "#f9e2af",
+  violet     = "#d183e8",
+  black4     = "#585b70",
 }
 local lsp = {
   -- Lsp server name

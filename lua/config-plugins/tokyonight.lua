@@ -6,9 +6,9 @@ return {
     styles = {
       sidebars = "transparent",
       floats = "transparent",
-    }
+    },
   },
   init = function()
-    vim.cmd[[colorscheme tokyonight]]
+    vim.cmd([[colorscheme tokyonight]])
   end,
 }
