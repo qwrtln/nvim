@@ -30,6 +30,16 @@ Then, run `:Lazy` to install plugins.
  - `<C-s>` shows git diff of the current line thanks to `gitsigns`.
  - `<C-|>` (un)comments either current line, or visually selected block of code 🔎
 
+### 📖 Status Line
+
+Using [lualine](https://github.com/nvim-lualine/lualine.nvim), I built a status line which also includes tabs, and shows some other goodies:
+
+![image](.docs/lualine_normal.png) 
+![image](.docs/lualine_insert.png) 
+![image](.docs/lualine_visual.png) 
+![image](.docs/lualine_command.png) 
+![image](.docs/lualine_replace.png) 
+
 
 ### 📋 List of Plugins
 
