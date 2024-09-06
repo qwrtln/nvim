@@ -1,3 +1,4 @@
+  -- catputchin mocha palette: https://github.com/catppuccin/tmux/blob/main/themes/catppuccin_mocha.tmuxtheme
 local colors = {
   background = "#1e1e2e",
   foreground = "#cdd6f4",
@@ -15,7 +16,6 @@ local colors = {
   violet = "#d183e8",
   black4 = "#585b70",
 }
-
 local lsp = {
   -- Lsp server name
   function()
