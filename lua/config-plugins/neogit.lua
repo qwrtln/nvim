@@ -1,6 +1,7 @@
-local cmd = vim.api.nvim_create_user_command
+local map = vim.api.nvim_set_keymap
+local options = { noremap = true }
 
-cmd("Neo", "Neogit", {})
+map("n", "<leader>n", "<cmd>Neogit<CR>", options)
 
 return {
   "NeogitOrg/neogit",

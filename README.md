@@ -24,9 +24,11 @@ Then, run `:Lazy` to install plugins.
 
 ### 😎 Interesting Key Bindings
 
- - `<C-g>` opens a popup window with recursive grep search in the current directory. Blazing fast ⚡ thanks to `ripgrep`.
- - `<S-f>` does the same but with file names. Superfast thanks to `fzf` 🔥
- - `<S-t>` opens a terminal in vertical split on the right already in insert mode. Ready to type commands 👨‍💻
+ - `jk` mapped as `<Esc>` is a great time saver.
+ - `<Space-g>` opens a popup window with recursive grep search in the current directory. Blazing fast ⚡ thanks to `ripgrep`.
+ - `<Space-f>` does the same but with file names. Superfast thanks to `fzf` 🔥
+ - `<Space-t>` opens a terminal in vertical split on the right already in insert mode. Ready to type commands 👨‍💻
+ - `<Space-n>` opens neogit 
  - `<C-s>` shows git diff of the current line thanks to `gitsigns`.
  - `<C-|>` (un)comments either current line, or visually selected block of code 🔎
 
@@ -52,3 +54,5 @@ Using [lualine](https://github.com/nvim-lualine/lualine.nvim), I built a status 
  - [telescope](https://github.com/nvim-telescope/telescope.nvim)
  - [tokyonight](https://github.com/folke/tokyonight.nvim)
  - [treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+
+Plus some others used indirectly as dependencies.
