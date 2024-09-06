@@ -1,10 +1,9 @@
 local map = vim.api.nvim_set_keymap
-local cmd = vim.api.nvim_create_user_command
 local options = { noremap = true }
 
-map("n", "<S-f>", "<cmd>:Telescope find_files<CR>", options)
-map("n", "<C-g>", "<cmd>:Telescope live_grep<CR>", options)
-cmd("Buf", "Telescope buffers", {})
+map("n", "<leader>f", "<cmd>Telescope find_files<CR>", options)
+map("n", "<leader>g", "<cmd>Telescope live_grep<CR>", options)
+map("n", "<leader>b", "<cmd>Telescope buffers<CR>", options)
 
 return {
   "nvim-telescope/telescope.nvim",

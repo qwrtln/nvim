@@ -11,4 +11,13 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup("config-plugins")
+require("lazy").setup {
+  spec = { import = "config-plugins" },
+  ui = {
+    border = "rounded",
+    size = {
+      width = 0.8,
+      height = 0.8,
+    },
+  },
+}
