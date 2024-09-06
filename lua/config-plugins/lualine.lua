@@ -51,7 +51,7 @@ local theme = {
     a = { fg = colors.black, bg = colors.pink, gui = "bold" },
     b = { fg = colors.black, bg = colors.blue },
     x = { fg = colors.white },
-    y = { fg = colors.white, bg = colors.black4 },
+    y = { fg = colors.foreground, bg = colors.black4 },
     z = { fg = colors.black, bg = colors.pink, gui = "none" },
   },
   visual = {

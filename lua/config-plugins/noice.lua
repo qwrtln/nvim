@@ -43,6 +43,14 @@ return {
   dependencies = {
     -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
     "MunifTanjim/nui.nvim",
-    "rcarriga/nvim-notify",
+    {
+      "rcarriga/nvim-notify",
+      opts = {
+        stages = "static",
+        render = "wrapped-compact",
+        background_colour = "FloatShadow",
+        timeout = 2500,
+      },
+    },
   },
 }
