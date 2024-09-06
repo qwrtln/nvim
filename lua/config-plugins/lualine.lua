@@ -1,4 +1,4 @@
-  -- catputchin mocha palette: https://github.com/catppuccin/tmux/blob/main/themes/catppuccin_mocha.tmuxtheme
+-- catputchin mocha palette: https://github.com/catppuccin/tmux/blob/main/themes/catppuccin_mocha.tmuxtheme
 local colors = {
   background = "#1e1e2e",
   foreground = "#cdd6f4",

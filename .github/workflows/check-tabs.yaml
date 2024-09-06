@@ -9,9 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Check tabs
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
+      - uses: actions/checkout@v4
       - name: Find tabs
         run: |
           ERRORS=0
