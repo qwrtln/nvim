@@ -47,7 +47,7 @@ return {
       "rcarriga/nvim-notify",
       opts = {
         stages = "static",
-        render = "wrapped-compact",
+        -- render = "wrapped-compact",
         background_colour = "FloatShadow",
         timeout = 2500,
       },
