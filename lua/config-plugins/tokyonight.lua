@@ -7,6 +7,9 @@ return {
       sidebars = "transparent",
       floats = "transparent",
     },
+    plugins = {
+      auto = true,
+    },
   },
   init = function()
     vim.cmd([[colorscheme tokyonight]])
