@@ -1,9 +1,10 @@
 local map = vim.api.nvim_set_keymap
 local options = { noremap = true }
 
-map("n", "<leader>f", "<cmd>Telescope git_files<CR>", options)
+map("n", "<leader>f", "<cmd>Telescope find_files<CR>", options)
 map("n", "<leader>g", "<cmd>Telescope live_grep<CR>", options)
 map("n", "<leader>b", "<cmd>Telescope buffers<CR>", options)
+map("n", "<leader>tf", "<cmd>tab sp<CR><cmd>Telescope find_files<CR>", options)
 
 return {
   "nvim-telescope/telescope.nvim",
@@ -17,6 +18,13 @@ return {
             ["<esc>"] = actions.close,
             ["jk"] = actions.close,
           },
+        },
+      },
+      pickers = {
+        find_files= {
+          hidden = true,
+          -- `hidden = true` will still show the inside of `.git/` as it's not `.gitignore`d.
+          find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
         },
       },
     }
