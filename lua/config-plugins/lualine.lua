@@ -17,6 +17,7 @@ local colors = {
   violet     = "#d183e8",
   black4     = "#585b70",
 }
+
 local lsp = {
   -- Lsp server name
   function()
