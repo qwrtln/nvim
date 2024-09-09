@@ -1,4 +1,4 @@
--- stylua: ignore
+-- stylua: ignore start
 local options = {
   backup = false,                          -- creates a backup file
   clipboard = "unnamedplus",               -- allows neovim to access the system clipboard
@@ -40,6 +40,7 @@ local options = {
 
 vim.opt.shortmess:append("c")              -- don't give |ins-completion-menu| messages
 vim.opt.iskeyword:append("-")              -- hyphenated wrods recognized by searches
+-- stylua: ignore end
 
 for k, v in pairs(options) do
   vim.opt[k] = v
