@@ -4,6 +4,7 @@ local options = { noremap = true }
 vim.g.mapleader = " "
 
 map("n", ";", ":", options)
+map("v", ";", ":", options)
 map("i", "jk", "<Esc>", options)
 map("n", "jk", "<Esc>", options)
 map("v", "jk", "<Esc>", options)
@@ -13,7 +14,6 @@ map("n", "<Down>", "<C-w>j", options)
 map("n", "<Up>", "<C-w>k", options)
 map("n", "<Right>", "<C-w>l", options)
 map("n", "<C-h>", "gT", options)
-map("n", "<C-l>", "gt", options)
 map("n", "<C-l>", "gt", options)
 
 -- save and exit commands
