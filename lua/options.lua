@@ -1,4 +1,4 @@
--- stylua: ignore
+-- stylua: ignore start
 local options = {
   backup = false,                          -- creates a backup file
   clipboard = "unnamedplus",               -- allows neovim to access the system clipboard
@@ -11,7 +11,7 @@ local options = {
   -- ignorecase = true,                       -- ignore case in search patterns
   mouse = "a",                             -- allow the mouse to be used in neovim
   pumheight = 10,                          -- pop up menu height
-  -- showmode = false,                        -- we don't need to see things like -- INSERT -- anymore
+  showmode = false,                        -- included in statusline
   showtabline = 0,                         -- hide tabs by default
   smartcase = true,                        -- smart case
   smartindent = true,                      -- make indenting smarter again
@@ -33,17 +33,18 @@ local options = {
   signcolumn = "yes",                      -- always show the sign column, otherwise it would shift the text each time
   wrap = false,                            -- display lines as one long line
   scrolloff = 8,                           -- scroll content before reaching the edge of the screen
-  sidescrolloff = 8,
+  sidescrolloff = 8,                       -- ditto for horizontal scrolling
   guifont = "monospace:h17",               -- the font used in graphical neovim applications
+  whichwrap = "<,>,[,],h,l"                -- which "horizontal" keys should wrap to next/previous line
 }
 
-vim.opt.shortmess:append("c")
+vim.opt.shortmess:append("c")              -- don't give |ins-completion-menu| messages
+vim.opt.iskeyword:append("-")              -- hyphenated wrods recognized by searches
+-- stylua: ignore end
 
 for k, v in pairs(options) do
   vim.opt[k] = v
 end
-
-vim.cmd("set whichwrap+=<,>,[,],h,l")
 
 vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
   group = vim.api.nvim_create_augroup("float_diagnostic", { clear = true }),

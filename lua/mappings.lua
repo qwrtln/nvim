@@ -14,7 +14,6 @@ map("n", "<Up>", "<C-w>k", options)
 map("n", "<Right>", "<C-w>l", options)
 map("n", "<C-h>", "gT", options)
 map("n", "<C-l>", "gt", options)
-map("n", "<C-l>", "gt", options)
 
 -- save and exit commands
 map("n", "<C-x>", "<cmd>x<CR>", options)
