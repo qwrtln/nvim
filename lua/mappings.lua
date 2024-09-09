@@ -4,6 +4,7 @@ local options = { noremap = true }
 vim.g.mapleader = " "
 
 map("n", ";", ":", options)
+map("v", ";", ":", options)
 map("i", "jk", "<Esc>", options)
 map("n", "jk", "<Esc>", options)
 map("v", "jk", "<Esc>", options)
