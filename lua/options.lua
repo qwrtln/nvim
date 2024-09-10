@@ -55,6 +55,3 @@ vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
     }
   end,
 })
-
--- return to previous tab after closing one
-vim.cmd([[autocmd TabClosed * tabprevious]])
