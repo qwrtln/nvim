@@ -11,8 +11,15 @@ Make sure you have installed the following:
  - [NerdFont](https://www.nerdfonts.com/)
 
 Optionally, you can install LSPs:
+ - [bash-language-server](https://github.com/bash-lsp/bash-language-server)
  - [pyright](https://github.com/microsoft/pyright)
  - [lua-language-server](https://github.com/LuaLS/lua-language-server)
+
+ And autoformatters (system-wide):
+
+ - [stylua](https://github.com/JohnnyMorganz/stylua)
+ - [ruff](https://github.com/charliermarsh/ruff) and [isort](https://github.com/PyCQA/isort)
+ - [shellcheck](https://github.com/koalaman/shellcheck)
 
 ## 🔦 Highlights
 
@@ -45,6 +52,7 @@ Using [lualine](https://github.com/nvim-lualine/lualine.nvim), I built a status 
 
 ### 📋 List of Plugins
 
+ - [conform](https://github.com/stevearc/conform.nvim)
  - [gitsigns](https://github.com/lewis6991/gitsigns.nvim)
  - [lualine](https://github.com/nvim-lualine/lualine.nvim)
  - [neogit](https://github.com/NeogitOrg/neogit)
