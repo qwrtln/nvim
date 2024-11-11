@@ -7,6 +7,7 @@ end
 return {
   "neovim/nvim-lspconfig",
   config = function()
+    require("lspconfig").bashls.setup {}
     require("lspconfig").lua_ls.setup {
       settings = {
         Lua = {
