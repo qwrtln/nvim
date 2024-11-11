@@ -1,3 +1,23 @@
+vim.api.nvim_create_autocmd("FileType", {
+  callback = function()
+    require("cmp").setup.filetype("gitcommit", {
+      enabled = false,
+    })
+  end,
+})
+
+vim.api.nvim_create_autocmd("CmdlineEnter", {
+  callback = function()
+    require("cmp").setup { enabled = false }
+  end,
+})
+
+vim.api.nvim_create_autocmd("CmdlineLeave", {
+  callback = function()
+    require("cmp").setup { enabled = true }
+  end,
+})
+
 return {
   "hrsh7th/nvim-cmp",
   event = { "BufEnter", "BufReadPre", "BufNewFile" },
@@ -144,9 +164,6 @@ return {
       },
       min_length = 0, -- allow for `from package import _` in Python
       mapping = cmp.mapping.preset.insert {
-        ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-        ["<C-f>"] = cmp.mapping.scroll_docs(4),
-        ["<C-Space>"] = cmp.mapping.complete(),
         ["<CR>"] = cmp.mapping.confirm { select = false }, -- no not select first item
         ["<C-e>"] = cmp.mapping.abort(),
         ["<Tab>"] = cmp.mapping(function(fallback)
@@ -159,24 +176,6 @@ return {
           end
         end, { "i", "s" }),
         ["<S-Tab>"] = cmp.mapping(function(fallback)
-          if cmp.visible() then
-            cmp.select_prev_item()
-          elseif luasnip.jumpable(-1) then
-            luasnip.jump(-1)
-          else
-            fallback()
-          end
-        end, { "i", "s" }),
-        ["<C-j>"] = cmp.mapping(function(fallback)
-          if cmp.visible() then
-            cmp.select_next_item()
-          elseif luasnip.expand_or_jumpable() then
-            luasnip.expand_or_jump()
-          else
-            fallback()
-          end
-        end, { "i", "s" }),
-        ["<C-k>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
             cmp.select_prev_item()
           elseif luasnip.jumpable(-1) then
