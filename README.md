@@ -52,6 +52,7 @@ Using [lualine](https://github.com/nvim-lualine/lualine.nvim), I built a status 
 
 ### 📋 List of Plugins
 
+ - [cmp](https://github.com/hrsh7th/nvim-cmp)
  - [conform](https://github.com/stevearc/conform.nvim)
  - [gitsigns](https://github.com/lewis6991/gitsigns.nvim)
  - [lualine](https://github.com/nvim-lualine/lualine.nvim)
