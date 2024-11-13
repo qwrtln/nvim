@@ -6,8 +6,8 @@ return {
     formatters_by_ft = {
       lua = { "stylua" },
       -- Conform will run multiple formatters sequentially
-      sh = { "shellcheck" },
       python = { "isort", "ruff_format" },
+      sh = { "shellcheck" },
       terraform = { "terraform_fmt" },
     },
     format_on_save = {
