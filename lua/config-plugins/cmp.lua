@@ -1,7 +1,12 @@
 vim.api.nvim_create_autocmd("FileType", {
   callback = function()
-    local filetypes = { "gitcommit", "markdown" }
-    for _, f in ipairs(filetypes) do
+    local filetypes_wo_autocomplete = {
+      "NeogitCommitMessage",
+      "TelescopePrompt",
+      "gitcommit",
+      "markdown",
+    }
+    for _, f in ipairs(filetypes_wo_autocomplete) do
       if vim.bo.filetype == f then
         require("cmp").setup.filetype(f, {
           enabled = false,
