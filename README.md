@@ -35,9 +35,18 @@ Then, run `:Lazy` to install plugins.
  - `<Space-g>` opens a popup window with recursive grep search in the current directory. Blazing fast ⚡ thanks to `ripgrep`.
  - `<Space-f>` does the same but with file names. Superfast thanks to `fzf` 🔥
  - `<Space-t>` opens a terminal in vertical split on the right already in insert mode. Ready to type commands 👨‍💻
- - `<Space-n>` opens neogit 
+ - `<Space-n>` opens neogit 🌳
+ - `<Space-o>` opens file manager in a floating window 🛢️
  - `<C-s>` shows git diff of the current line thanks to `gitsigns`.
  - `<C-|>` (un)comments either current line, or visually selected block of code 🔎
+
+### 🤖 AI assistance
+
+Codeium suggests snippets while typing, thanks to `neocodeium` plugin.
+Use the following:
+ - `<A-f>` to acccept the suggestion
+ - `<A-r>` to cycle through the suggestions
+ - `<A-e>` to cycle backwards
 
 ### 📖 Status Line
 
@@ -56,10 +65,12 @@ Using [lualine](https://github.com/nvim-lualine/lualine.nvim), I built a status 
  - [conform](https://github.com/stevearc/conform.nvim)
  - [gitsigns](https://github.com/lewis6991/gitsigns.nvim)
  - [lualine](https://github.com/nvim-lualine/lualine.nvim)
+ - [neocodeium](https://github.com/monkoose/neocodeium)
  - [neogit](https://github.com/NeogitOrg/neogit)
  - [noice](https://github.com/folke/noice.nvim)
  - [nvim-comment](https://github.com/terrortylor/nvim-comment)
  - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
+ - [oil](https://github.com/stevearc/oil.nvim)
  - [telescope](https://github.com/nvim-telescope/telescope.nvim)
  - [tokyonight](https://github.com/folke/tokyonight.nvim)
  - [treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
