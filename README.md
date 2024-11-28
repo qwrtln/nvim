@@ -42,7 +42,7 @@ Then, run `:Lazy` to install plugins.
 
 ### 🤖 AI assistance
 
-Codeium suggests snippets while typing.
+Codeium suggests snippets while typing, thanks to `neocodeium` plugin.
 Use the following:
  - `<A-f>` to acccept the suggestion
  - `<A-r>` to cycle through the suggestions
@@ -65,6 +65,7 @@ Using [lualine](https://github.com/nvim-lualine/lualine.nvim), I built a status 
  - [conform](https://github.com/stevearc/conform.nvim)
  - [gitsigns](https://github.com/lewis6991/gitsigns.nvim)
  - [lualine](https://github.com/nvim-lualine/lualine.nvim)
+ - [neocodeium](https://github.com/monkoose/neocodeium)
  - [neogit](https://github.com/NeogitOrg/neogit)
  - [noice](https://github.com/folke/noice.nvim)
  - [nvim-comment](https://github.com/terrortylor/nvim-comment)
