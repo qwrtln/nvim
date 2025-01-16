@@ -1,7 +1,13 @@
 local map = vim.api.nvim_set_keymap
 local options = { noremap = true }
 
-vim.g.mapleader = " "
+vim.g.mapleader = vim.api.nvim_replace_termcodes("<Enter>", false, false, true)
+vim.keymap.set(
+  "",
+  "<Space>",
+  vim.api.nvim_replace_termcodes("<Leader>", false, false, true),
+  { remap = true }
+)
 
 map("n", ";", ":", options)
 map("v", ";", ":", options)
