@@ -11,10 +11,6 @@ vim.keymap.set(
 
 map("n", ";", ":", options)
 map("v", ";", ":", options)
-map("i", "jk", "<Esc>", options)
-map("n", "jk", "<Esc>", options)
-map("v", "jk", "<Esc>", options)
-map("c", "jk", "<Esc>", options)
 map("n", "<Left>", "<C-w>h", options)
 map("n", "<Down>", "<C-w>j", options)
 map("n", "<Up>", "<C-w>k", options)
