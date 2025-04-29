@@ -1,9 +1,5 @@
 local highlight = vim.api.nvim_set_hl
 
-highlight(0, "LineNrAbove", { fg = "#5a5a5a", bold = false })
-highlight(0, "LineNr", { fg = "#71797E", bold = false })
-highlight(0, "LineNrBelow", { fg = "#5a5a5a", bold = false })
-
 return {
   "folke/tokyonight.nvim",
   opts = {
@@ -17,7 +13,11 @@ return {
       auto = true,
     },
   },
-  init = function()
+  config = function(_, opts)
+    require("tokyonight").setup(opts)
     vim.cmd([[colorscheme tokyonight]])
+    highlight(0, "LineNrAbove", { fg = "#5a5a5a", bold = false })
+    highlight(0, "LineNr", { fg = "#71797E", bold = true })
+    highlight(0, "LineNrBelow", { fg = "#5a5a5a", bold = false })
   end,
 }
