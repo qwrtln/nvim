@@ -26,3 +26,13 @@ map("n", "<C-q>", "<cmd>q!<CR>", options)
 map("t", "jk", "<C-\\><C-n>", options)
 map("t", "<Esc>", "<C-\\><C-n>", options)
 map("n", "<leader>t", "<cmd>vsp<CR><cmd>terminal<CR>i", options)
+
+-- toggle diff mode
+local function toggle_diff()
+  if vim.wo.diff then
+    vim.cmd("windo diffoff")
+  else
+    vim.cmd("windo diffthis")
+  end
+end
+vim.keymap.set("n", "<leader>d", toggle_diff)
