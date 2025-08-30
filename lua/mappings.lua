@@ -1,6 +1,7 @@
 local map = vim.api.nvim_set_keymap
 local options = { noremap = true }
 
+-- remap leader to space and enter
 vim.g.mapleader = vim.api.nvim_replace_termcodes("<Enter>", false, false, true)
 vim.keymap.set(
   "",
@@ -9,12 +10,17 @@ vim.keymap.set(
   { remap = true }
 )
 
+-- command in one key press
 map("n", ";", ":", options)
 map("v", ";", ":", options)
+
+-- navigate splits
 map("n", "<Left>", "<C-w>h", options)
 map("n", "<Down>", "<C-w>j", options)
 map("n", "<Up>", "<C-w>k", options)
 map("n", "<Right>", "<C-w>l", options)
+
+-- navigate tabs
 map("n", "<C-h>", "gT", options)
 map("n", "<C-l>", "gt", options)
 
@@ -26,6 +32,10 @@ map("n", "<C-q>", "<cmd>q!<CR>", options)
 map("t", "jk", "<C-\\><C-n>", options)
 map("t", "<Esc>", "<C-\\><C-n>", options)
 map("n", "<leader>t", "<cmd>vsp<CR><cmd>terminal<CR>i", options)
+
+-- commenting out
+map("n", "<C-\\>", "gcc", { noremap = false })
+map("x", "<C-\\>", "gc", { noremap = false })
 
 -- toggle diff mode
 local function toggle_diff()
