@@ -9,12 +9,9 @@ return {
       python = { "isort", "ruff_format" },
       terraform = { "terraform_fmt" },
     },
-    -- format_on_save = {
-    --   -- These options will be passed to conform.format()
-    --   timeout_ms = 500,
-    --   lsp_format = "fallback",
-    -- },
     format_after_save = function(bufnr)
+      -- To prevent cursor jumping with smear-cursor.nvim
+      -- https://github.com/sphamba/smear-cursor.nvim/issues/78#issuecomment-2585744218
       if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
         return
       end

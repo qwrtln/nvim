@@ -31,7 +31,6 @@ Then, run `:Lazy` to install plugins.
 
 ### 😎 Interesting Key Bindings
 
- - `jk` mapped as `<Esc>` is a great time saver.
  - `<Space-g>` opens a popup window with recursive grep search in the current directory. Blazing fast ⚡ thanks to `ripgrep`.
  - `<Space-f>` does the same but with file names. Superfast thanks to `fzf` 🔥
  - `<Space-t>` opens a terminal in vertical split on the right already in insert mode. Ready to type commands 👨‍💻
@@ -67,10 +66,11 @@ Using [lualine](https://github.com/nvim-lualine/lualine.nvim), I built a status 
  - [lualine](https://github.com/nvim-lualine/lualine.nvim)
  - [neocodeium](https://github.com/monkoose/neocodeium)
  - [neogit](https://github.com/NeogitOrg/neogit)
+ - [neoscroll](https://github.com/karb94/neoscroll.nvim)
  - [noice](https://github.com/folke/noice.nvim)
- - [nvim-comment](https://github.com/terrortylor/nvim-comment)
  - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
  - [oil](https://github.com/stevearc/oil.nvim)
+ - [smear-cursor](https://github.com/sphamba/smear-cursor.nvim)
  - [telescope](https://github.com/nvim-telescope/telescope.nvim)
  - [tokyonight](https://github.com/folke/tokyonight.nvim)
  - [treesitter](https://github.com/nvim-treesitter/nvim-treesitter)

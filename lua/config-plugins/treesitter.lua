@@ -70,7 +70,6 @@ return {
         "latex",
         "ledger",
         "lua",
-        "lua",
         "markdown",
         "python",
         "toml",
