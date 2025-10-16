@@ -1,3 +1,3 @@
 require("mappings")
 require("options")
-require("plugins")
+require("lazy-plugin-manager")
