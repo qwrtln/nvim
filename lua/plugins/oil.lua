@@ -1,11 +1,16 @@
 return {
   "stevearc/oil.nvim",
+  lazy = false,
   opts = {
     view_options = {
       show_hidden = true,
     },
     float = {
-      padding = 10,
+      padding = 11,
+      border = "rounded",
+      win_options = {
+        winblend = 0,
+      },
     },
   },
   config = function(_, opts)

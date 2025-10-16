@@ -7,8 +7,7 @@ end
 return {
   "neovim/nvim-lspconfig",
   config = function()
-    require("lspconfig").bashls.setup {}
-    require("lspconfig").lua_ls.setup {
+    vim.lsp.config("lua_ls", {
       settings = {
         Lua = {
           diagnostics = {
@@ -16,8 +15,11 @@ return {
           },
         },
       },
-    }
-    require("lspconfig").pyright.setup {}
-    require("lspconfig").texlab.setup {}
+    })
+
+    vim.lsp.enable("bashls")
+    vim.lsp.enable("lua_ls")
+    vim.lsp.enable("pyright")
+    vim.lsp.enable("texlab")
   end,
 }
