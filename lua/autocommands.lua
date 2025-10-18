@@ -30,3 +30,16 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.treesitter.start()
   end,
 })
+
+-- custom parsers for treesitter
+vim.api.nvim_create_autocmd("User", {
+  pattern = "TSUpdate",
+  callback = function()
+    require("nvim-treesitter.parsers").ghactions = {
+      install_info = {
+        url = "https://github.com/rmuir/tree-sitter-ghactions",
+        queries = "queries",
+      },
+    }
+  end,
+})
