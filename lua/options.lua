@@ -45,13 +45,3 @@ vim.opt.iskeyword:append("-")              -- hyphenated wrods recognized by sea
 for k, v in pairs(options) do
   vim.opt[k] = v
 end
-
-vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
-  group = vim.api.nvim_create_augroup("float_diagnostic", { clear = true }),
-  callback = function()
-    vim.diagnostic.open_float(nil, { focus = false })
-    vim.diagnostic.config {
-      virtual_text = false, -- gets rid of inline messages from LSP
-    }
-  end,
-})

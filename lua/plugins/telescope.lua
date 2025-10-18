@@ -8,7 +8,7 @@ map("n", "<leader>tr", "<cmd>tab sp<CR><cmd>Telescope find_files<CR>", options)
 
 return {
   "nvim-telescope/telescope.nvim",
-  branch = "0.1.x",
+  branch = "master",
   config = function()
     local actions = require("telescope.actions")
     require("telescope").setup {
