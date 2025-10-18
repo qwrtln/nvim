@@ -1,6 +1,6 @@
 # 🛸 nvim
 
-This is the [`neovim`](https://github.com/neovim/neovim) configuration I use both personally 🏠 and profesionally 💼
+This is the [`neovim`](https://github.com/neovim/neovim) configuration I use both personally 🏠 and professionally 💼
 
 ## 🚧 Dependencies
 
@@ -43,7 +43,7 @@ Then, run `:Lazy` to install plugins.
 
 Codeium suggests snippets while typing, thanks to `neocodeium` plugin.
 Use the following:
- - `<A-f>` to acccept the suggestion
+ - `<A-f>` to accept the suggestion
  - `<A-r>` to cycle through the suggestions
  - `<A-e>` to cycle backwards
 

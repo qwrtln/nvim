@@ -174,7 +174,7 @@ return {
       },
       min_length = 0, -- allow for `from package import _` in Python
       mapping = cmp.mapping.preset.insert {
-        ["<CR>"] = cmp.mapping.confirm { select = false }, -- no not select first item
+        ["<CR>"] = cmp.mapping.confirm { select = false }, -- do not select first item
         ["<C-e>"] = cmp.mapping.abort(),
         ["<Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then

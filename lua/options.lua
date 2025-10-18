@@ -39,7 +39,7 @@ local options = {
 }
 
 vim.opt.shortmess:append("c")              -- don't give |ins-completion-menu| messages
-vim.opt.iskeyword:append("-")              -- hyphenated wrods recognized by searches
+vim.opt.iskeyword:append("-")              -- hyphenated words recognized by searches
 -- stylua: ignore end
 
 for k, v in pairs(options) do
