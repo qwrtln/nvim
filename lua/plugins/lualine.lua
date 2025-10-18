@@ -1,4 +1,4 @@
--- catputchin mocha palette: https://github.com/catppuccin/tmux/blob/main/themes/catppuccin_mocha.tmuxtheme
+-- catppuccin mocha palette: https://github.com/catppuccin/tmux/blob/main/themes/catppuccin_mocha.tmuxtheme
 -- stylua: ignore
 local colors = {
   background = "#1e1e2e",

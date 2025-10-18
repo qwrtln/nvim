@@ -5,6 +5,7 @@ map("n", "<leader>f", "<cmd>Telescope find_files<CR>", options)
 map("n", "<leader>g", "<cmd>Telescope live_grep<CR>", options)
 map("n", "<leader>b", "<cmd>Telescope buffers<CR>", options)
 map("n", "<leader>tr", "<cmd>tab sp<CR><cmd>Telescope find_files<CR>", options)
+map("n", "<leader>ty", "<cmd>vsp<CR><cmd>Telescope find_files<CR>", options)
 
 return {
   "nvim-telescope/telescope.nvim",
