@@ -1,3 +1,4 @@
+-- List of parsres to be installed by nvim-treesitter
 local language_parsers = {
   "bash",
   "css",
@@ -20,6 +21,7 @@ local language_parsers = {
   "yaml",
 }
 
+-- Parser names don't always correspond to their file types
 local function parser_to_filetype(parser)
   local mappings = {
     bash = "sh",
@@ -28,12 +30,13 @@ local function parser_to_filetype(parser)
   return mappings[parser] or parser
 end
 
+-- Construct list of filetypes to avoid repetition
 local language_filetypes = {}
 for _, parser in ipairs(language_parsers) do
   table.insert(language_filetypes, parser_to_filetype(parser))
 end
 
--- Start treesitter on selected file types
+-- Start treesitter automatically for listed file types
 vim.api.nvim_create_autocmd("FileType", {
   pattern = language_filetypes,
   callback = function()
@@ -41,7 +44,7 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
--- custom parsers for treesitter
+-- Custom GitHub Actions parser - to be removed after it's officially supported
 vim.api.nvim_create_autocmd("User", {
   pattern = "TSUpdate",
   callback = function()
