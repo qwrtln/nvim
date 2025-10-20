@@ -1,10 +1,11 @@
 -- List of parsres to be installed by nvim-treesitter
 local language_parsers = {
   "bash",
-  "css",
   "comment",
+  "css",
   "diff",
   "dockerfile",
+  "ghactions",
   "go",
   "hcl",
   "html",
@@ -41,19 +42,6 @@ vim.api.nvim_create_autocmd("FileType", {
   pattern = language_filetypes,
   callback = function()
     vim.treesitter.start()
-  end,
-})
-
--- Custom GitHub Actions parser - to be removed after it's officially supported
-vim.api.nvim_create_autocmd("User", {
-  pattern = "TSUpdate",
-  callback = function()
-    require("nvim-treesitter.parsers").ghactions = {
-      install_info = {
-        url = "https://github.com/rmuir/tree-sitter-ghactions",
-        queries = "queries",
-      },
-    }
   end,
 })
 

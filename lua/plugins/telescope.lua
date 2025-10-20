@@ -1,15 +1,11 @@
-local map = vim.api.nvim_set_keymap
-local options = { noremap = true }
+local map = vim.keymap.set
 
-map("n", "<leader>f", "<cmd>Telescope find_files<CR>", options)
-map("n", "<leader>g", "<cmd>Telescope live_grep<CR>", options)
-map("n", "<leader>b", "<cmd>Telescope buffers<CR>", options)
-map("n", "<leader>tr", "<cmd>tab sp<CR><cmd>Telescope find_files<CR>", options)
-map("n", "<leader>ty", "<cmd>vsp<CR><cmd>Telescope find_files<CR>", options)
+map("n", "<leader>f", "<cmd>Telescope find_files<CR>")
+map("n", "<leader>g", "<cmd>Telescope live_grep<CR>")
+map("n", "<leader>b", "<cmd>Telescope buffers<CR>")
 
 return {
   "nvim-telescope/telescope.nvim",
-  branch = "master",
   config = function()
     local actions = require("telescope.actions")
     require("telescope").setup {
@@ -18,6 +14,8 @@ return {
           i = {
             ["<esc>"] = actions.close,
             ["jk"] = actions.close,
+            ["<C-t>"] = actions.select_tab, -- Open in new tab
+            ["<C-y>"] = actions.select_vertical, -- Open in vertical split
           },
         },
       },
