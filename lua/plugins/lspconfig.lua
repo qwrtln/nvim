@@ -18,19 +18,11 @@ end
 return {
   "neovim/nvim-lspconfig",
   config = function()
-    vim.lsp.config("lua_ls", {
-      settings = {
-        Lua = {
-          diagnostics = {
-            globals = { "vim" },
-          },
-        },
-      },
-    })
+    local path = vim.fn.stdpath("config") .. "/lua/language-servers"
+    local files = vim.fn.readdir(path)
 
-    vim.lsp.enable("bashls")
-    vim.lsp.enable("lua_ls")
-    vim.lsp.enable("pyright")
-    vim.lsp.enable("texlab")
+    for _, file in ipairs(files) do
+      require("language-servers." .. file:gsub("%.lua$", ""))
+    end
   end,
 }
