@@ -1,5 +1,13 @@
 vim.diagnostic.config {
   virtual_text = false,
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = "",
+      [vim.diagnostic.severity.WARN] = "",
+      [vim.diagnostic.severity.HINT] = "💡",
+      [vim.diagnostic.severity.INFO] = "",
+    },
+  },
 }
 
 -- Get rid of inline messages from LSP
@@ -9,12 +17,6 @@ vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
     vim.diagnostic.open_float(nil, { focus = false })
   end,
 })
-
-local signs = { Error = "", Warn = "", Hint = "💡", Info = "" }
-for type, icon in pairs(signs) do
-  local hl = "DiagnosticSign" .. type
-  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-end
 
 return {
   "neovim/nvim-lspconfig",
