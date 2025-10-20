@@ -6,7 +6,6 @@ map("n", "<leader>b", "<cmd>Telescope buffers<CR>")
 
 return {
   "nvim-telescope/telescope.nvim",
-  branch = "master",
   config = function()
     local actions = require("telescope.actions")
     require("telescope").setup {

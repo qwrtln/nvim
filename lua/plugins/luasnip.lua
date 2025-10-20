@@ -9,7 +9,7 @@ return {
     local lsloader = require("luasnip.loaders.from_lua")
 
     require("luasnip.loaders.from_vscode").lazy_load()
-    lsloader.load { paths = "~/.config/nvim/snippets" }
+    lsloader.load { paths = vim.fn.stdpath("config") .. "/snippets" }
 
     local types = require("luasnip.util.types")
 

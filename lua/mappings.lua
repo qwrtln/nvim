@@ -22,8 +22,8 @@ map("t", "<Esc>", "<C-\\><C-n>")
 map("n", "<leader>t", "<cmd>vsp<CR><cmd>terminal<CR>i")
 
 -- commenting out
-map("n", "<C-\\>", "gcc", { noremap = false })
-map("x", "<C-\\>", "gc", { noremap = false })
+map("n", "<C-\\>", "gcc", { remap = true })
+map("x", "<C-\\>", "gc", { remap = true })
 
 -- toggle diff mode
 local function toggle_diff()
