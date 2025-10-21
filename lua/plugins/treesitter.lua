@@ -22,6 +22,11 @@ local language_parsers = {
   "yaml",
 }
 
+if vim.fn.has("mac") == 1 then
+  table.insert(language_parsers, "ruby")
+  table.insert(language_parsers, "swift")
+end
+
 -- Parser names don't always correspond to their file types
 local function parser_to_filetype(parser)
   local mappings = {

@@ -1,5 +1,7 @@
 return {
   "monkoose/neocodeium",
+  -- Don't use the plugin on macOS
+  enabled = vim.fn.has("mac") == 0,
   event = "VeryLazy",
   opts = {
     silent = true,
