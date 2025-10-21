@@ -1,17 +1,15 @@
 -- macOS specific settings to support Fastlane and Swift
-local file_types = { "ruby", "swift" }
-
-require("nvim-treesitter").install(file_types)
-
 vim.filetype.add {
   pattern = {
-    [".*/fastlane/.+file"] = "ruby",
+    [".*/[Ff]astfile"] = "ruby",
+    [".*/[Aa]ppfile"] = "ruby",
+    [".*/[Pp]lugfile"] = "ruby",
+    [".*/[Mm]atchfile"] = "ruby",
+    [".*/[Ss]canfile"] = "ruby",
+    [".*/[Ss]napfile"] = "ruby",
+    [".*/[Gg]ymfile"] = "ruby",
   },
 }
 
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = file_types,
-  callback = function()
-    vim.treesitter.start()
-  end,
-})
+vim.lsp.enable("ruby_lsp")
+vim.lsp.enable("sourcekit")
