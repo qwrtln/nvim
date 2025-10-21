@@ -13,7 +13,7 @@ return {
         mappings = {
           i = {
             ["<esc>"] = actions.close,
-            ["jk"] = actions.close,
+            ["<leader>j"] = actions.close,
             ["<C-t>"] = actions.select_tab, -- Open in new tab
             ["<C-y>"] = actions.select_vertical, -- Open in vertical split
           },
