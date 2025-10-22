@@ -19,5 +19,6 @@ return {
     highlight(0, "LineNrAbove", { fg = "#5a5a5a", bold = false })
     highlight(0, "LineNr", { fg = "#71797E", bold = true })
     highlight(0, "LineNrBelow", { fg = "#5a5a5a", bold = false })
+    highlight(0, "IndentBlanklineScpe", { fg = "#606060" })
   end,
 }

@@ -3,6 +3,28 @@ local map = vim.keymap.set
 map("n", "<leader>f", "<cmd>Telescope find_files<CR>")
 map("n", "<leader>g", "<cmd>Telescope live_grep<CR>")
 map("n", "<leader>b", "<cmd>Telescope buffers<CR>")
+map("n", "<leader>F", function()
+  local path = "~/Workspace"
+  vim.notify("Searching in " .. path, vim.log.levels.WARN, {
+    title = "Multi-project search 🔎",
+  })
+  require("telescope.builtin").find_files {
+    cwd = vim.fn.expand(path),
+    hidden = true,
+    find_command = {
+      "fd",
+      "--type",
+      "f",
+      "--hidden",
+      "--exclude",
+      "/archive",
+      "--exclude",
+      ".git",
+      "--exclude",
+      "*.{png,jpg,jpeg,gif,ico,svg,webp,psd,xcf,pdf,zip,tar,gz,rar,7z,so}",
+    },
+  }
+end)
 
 return {
   "nvim-telescope/telescope.nvim",
@@ -22,8 +44,7 @@ return {
       pickers = {
         find_files = {
           hidden = true,
-          -- `hidden = true` will still show the inside of `.git/` as it's not `.gitignore`d.
-          find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
+          find_command = { "rg", "--files", "--hidden" },
         },
       },
     }
