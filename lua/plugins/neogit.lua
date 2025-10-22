@@ -1,6 +1,4 @@
-local map = vim.keymap.set
-
-map("n", "<leader>n", "<cmd>Neogit<CR>")
+vim.keymap.set("n", "<leader>n", "<cmd>Neogit<CR>")
 
 return {
   "NeogitOrg/neogit",
