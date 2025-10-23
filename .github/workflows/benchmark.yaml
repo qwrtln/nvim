@@ -40,15 +40,13 @@ jobs:
           mv init.lua lua queries ~/.config/nvim
 
       - name: Install plugins
-        run: |
-          ./nvim.appimage --headless -c "Lazy! sync" -c "qa"
-        timeout-minutes: 5
+        run: ./nvim.appimage --headless -c "Lazy! sync" -c "qa"
 
       - name: Cache treesitter parsers
         uses: actions/cache@v4
         with:
-          path: ~/.local/share/nvim/lazy/nvim-treesitter/parser
-          key: treesitter-parsers-${{ hashFiles('~/.config/nvim/lua/plugins/treesitter.lua') }}
+          path: .local/share/nvim/lazy/nvim-treesitter
+          key: treesitter-parsers-${{ hashFiles('.config/nvim/lua/plugins/treesitter.lua') }}
           restore-keys: |
             treesitter-parsers-
 
@@ -59,8 +57,8 @@ jobs:
             sed 's/.*"\([^"]*\)".*/\1/' | \
             tr '\n' ' ')
 
-          ./nvim.appimage --headless -c "TSInstall $PARSERS" -c "qa"
-        timeout-minutes: 5
+          ./nvim.appimage --headless -c "TSInstall $PARSERS"
+        timeout-minutes: 10
         continue-on-error: true
 
       - name: Run benchmark
