@@ -30,7 +30,7 @@ jobs:
 
       - name: Install neovim
         run: |
-          curl -L $NVIM_DOWNLOAD_LINK -o nvim.appimage
+          wget --quiet $NVIM_DOWNLOAD_LINK -O nvim.appimage
           chmod +x nvim.appimage
           ./nvim.appimage -V1 -v
 
@@ -40,7 +40,9 @@ jobs:
           mv init.lua lua queries ~/.config/nvim
 
       - name: Install plugins
-        run: ./nvim.appimage --headless -c "Lazy! sync" -c "qa"
+        run: |
+          ./nvim.appimage --headless -c "Lazy! sync" -c "qa"
+          ./nvim.appimage --headless "+TSUpdateSync" +qa
         timeout-minutes: 5
 
       - name: Run benchmark
