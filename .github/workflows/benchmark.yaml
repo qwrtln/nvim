@@ -45,7 +45,7 @@ jobs:
 
       - name: Run benchmark
         run: |
-          for i in {1..2}; do ./nvim.appimage --headless --startuptime time-$i.log +qa; done && \
+          for i in {1..100}; do ./nvim.appimage --headless --startuptime time-$i.log +qa; done && \
             grep --no-filename "NVIM STARTED" *log | sort -n | tee raw.log
 
       - name: Run stats
@@ -58,6 +58,7 @@ jobs:
             END {
               avg=sum/NR;
               stddev=sqrt(sumsq/NR - avg*avg);
+              printf "Benchmark:\n"
               printf "```\n"
               printf "Count:   %d\n", NR;
               printf "Min:     %.3f ms\n", values[1];
