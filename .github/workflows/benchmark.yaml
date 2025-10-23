@@ -1,0 +1,66 @@
+name: Startup time benchmark
+
+on:
+  pull_request:
+    branches: [master]
+
+permissions:
+  contents: read
+  issues: read
+  pull-requests: write
+  id-token: write
+  statuses: write
+
+jobs:
+  benchmark:
+    name: Benchmark Neovim startup time
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up repository
+        uses: actions/checkout@v4
+
+      - name: Install neovim
+        run: |
+          curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+          chmod u+x nvim.appimage
+          sudo mv nvim.appimage /usr/local/bin/nvim
+
+      - name: Move configs
+        run: | 
+          mkdir -p ~/.config/nvim
+          mv init.lua lua queries ~/.config/nvim
+
+      - name: Install plugins
+        run: nvim --headless -c "Lazy! sync" -c "qa"
+        timeout-minutes: 5
+
+      - name: Run benchmark
+        run: |
+          for i in {1..100}; do nvim --headless --startuptime time-$i.log +qa; done && \
+            grep --no-filename "NVIM STARTED" *log | sort -n | tee raw.log
+
+      - name: Run stats
+        run: |
+          awk '{
+              sum+=$1;
+              sumsq+=$1*$1;
+              values[NR]=$1
+            }
+            END {
+              avg=sum/NR;
+              stddev=sqrt(sumsq/NR - avg*avg);
+              printf "```\n"
+              printf "Count:   %d\n", NR;
+              printf "Min:     %.3f ms\n", values[1];
+              printf "Max:     %.3f ms\n", values[NR];
+              printf "Median:  %.3f ms\n", values[int(NR/2)];
+              printf "Average: %.3f ms\n", avg;
+              printf "Std Dev: %.3f ms\n", stddev;
+              printf "```\n"
+            }' raw.log | tee stats.txt
+
+      - name: Add comment
+        run: gh pr comment ${{ github.event.pull_request.number }} --body-file stats.txt
+        env:
+          GH_TOKEN: ${{ github.token }}
