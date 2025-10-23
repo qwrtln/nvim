@@ -11,6 +11,9 @@ permissions:
   id-token: write
   statuses: write
 
+env:
+  NVIM_DOWNLOAD_LINK: https://github.com/neovim/neovim/releases/download/v0.11.4/nvim-linux-x86_64.appimage
+
 jobs:
   benchmark:
     name: Benchmark Neovim startup time
@@ -20,8 +23,16 @@ jobs:
       - name: Set up repository
         uses: actions/checkout@v4
 
+      - name: Install appimage dependencies
+        run: |
+          sudo add-apt-repository universe
+          sudo apt-get install -qq -y --no-install-recommends libfuse2t64  # FUSE is required for GH runners to run AppImages
+
       - name: Install neovim
-        run: sudo apt-get install -y neovim
+        run: |
+          curl -L $NVIM_DOWNLOAD_LINK -o nvim.appimage
+          chmod +x nvim.appimage
+          ./nvim.appimage -V1 -v
 
       - name: Move configs
         run: | 
@@ -29,12 +40,12 @@ jobs:
           mv init.lua lua queries ~/.config/nvim
 
       - name: Install plugins
-        run: nvim --headless -c "Lazy! sync" -c "qa"
+        run: ./nvim.appimage --headless -c "Lazy! sync" -c "qa"
         timeout-minutes: 5
 
       - name: Run benchmark
         run: |
-          for i in {1..100}; do nvim --headless --startuptime time-$i.log +qa; done && \
+          for i in {1..2}; do ./nvim.appimage --headless --startuptime time-$i.log +qa; done && \
             grep --no-filename "NVIM STARTED" *log | sort -n | tee raw.log
 
       - name: Run stats
