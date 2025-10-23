@@ -44,8 +44,23 @@ jobs:
           ./nvim.appimage --headless -c "Lazy! sync" -c "qa"
         timeout-minutes: 5
 
+      - name: Cache treesitter parsers
+        uses: actions/cache@v4
+        with:
+          path: ~/.local/share/nvim/lazy/nvim-treesitter/parser
+          key: treesitter-parsers-${{ hashFiles('~/.config/nvim/lua/plugins/treesitter.lua') }}
+          restore-keys: |
+            treesitter-parsers-
+
       - name: Pre install tree-sitter parsers
-        run: timeout 300 ./nvim.appimage --headless
+        run: |
+          PARSERS=$(sed -n '/local language_parsers = {/,/^}/p' ~/.config/nvim/lua/plugins/treesitter.lua | \
+            grep '"' | \
+            sed 's/.*"\([^"]*\)".*/\1/' | \
+            tr '\n' ' ')
+
+          ./nvim.appimage --headless -c "TSInstall $PARSERS"
+        timeout-minutes: 5
         continue-on-error: true
 
       - name: Run benchmark
