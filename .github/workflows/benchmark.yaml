@@ -45,7 +45,8 @@ jobs:
         timeout-minutes: 5
 
       - name: Pre install tree-sitter parsers
-        run: timeout 60 ./nvim.appimage --headless
+        run: timeout 300 ./nvim.appimage --headless
+        continue-on-error: true
 
       - name: Run benchmark
         run: |
