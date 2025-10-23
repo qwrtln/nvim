@@ -59,7 +59,7 @@ jobs:
             sed 's/.*"\([^"]*\)".*/\1/' | \
             tr '\n' ' ')
 
-          ./nvim.appimage --headless -c "TSInstall $PARSERS"
+          ./nvim.appimage --headless -c "TSInstall $PARSERS" -c "qa"
         timeout-minutes: 5
         continue-on-error: true
 
