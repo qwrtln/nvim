@@ -9,8 +9,8 @@ map("n", "<leader>;", ":")
 map("v", "<leader>;", ":")
 
 -- easier than reaching for escape
--- map("i", "<leader>j", "<Esc>")
--- map("v", "<leader>j", "<Esc>")
+map("i", "<leader>j", "<Esc>")
+map("v", "<leader>j", "<Esc>")
 
 -- navigate tabs
 map("n", "<C-h>", "gT")

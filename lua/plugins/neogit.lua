@@ -1,4 +1,8 @@
 vim.keymap.set("n", "<leader>n", "<cmd>Neogit<CR>")
+vim.api.nvim_create_user_command("DV", "DiffviewOpen <args>", {
+  nargs = "*",
+  desc = "Open git diff view",
+})
 
 return {
   "NeogitOrg/neogit",
