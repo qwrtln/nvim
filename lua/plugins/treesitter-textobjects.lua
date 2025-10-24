@@ -1,0 +1,108 @@
+return {
+  "nvim-treesitter/nvim-treesitter-textobjects",
+  branch = "main",
+  dependencies = { "nvim-treesitter/nvim-treesitter" },
+  config = function()
+    local map = vim.keymap.set
+
+    -- Setup configuration
+    require("nvim-treesitter-textobjects").setup {
+      select = {
+        lookahead = true,
+        include_surrounding_whitespace = false,
+      },
+      move = {
+        set_jumps = true,
+      },
+    }
+
+    local select = require("nvim-treesitter-textobjects.select").select_textobject
+    local move = require("nvim-treesitter-textobjects.move")
+
+    -- Text object selections
+    -- Functions
+    map({ "x", "o" }, "af", function()
+      select("@function.outer", "textobjects")
+    end, { desc = "Select around function" })
+    map({ "x", "o" }, "if", function()
+      select("@function.inner", "textobjects")
+    end, { desc = "Select inside function" })
+
+    -- Classes
+    map({ "x", "o" }, "ac", function()
+      select("@class.outer", "textobjects")
+    end, { desc = "Select around class" })
+    map({ "x", "o" }, "ic", function()
+      select("@class.inner", "textobjects")
+    end, { desc = "Select inside class" })
+
+    -- Parameters
+    map({ "x", "o" }, "aa", function()
+      select("@parameter.outer", "textobjects")
+    end, { desc = "Select around parameter" })
+    map({ "x", "o" }, "ia", function()
+      select("@parameter.inner", "textobjects")
+    end, { desc = "Select inside parameter" })
+
+    -- Blocks
+    map({ "x", "o" }, "ab", function()
+      select("@block.outer", "textobjects")
+    end, { desc = "Select around block" })
+    map({ "x", "o" }, "ib", function()
+      select("@block.inner", "textobjects")
+    end, { desc = "Select inside block" })
+
+    -- Conditionals
+    map({ "x", "o" }, "ai", function()
+      select("@conditional.outer", "textobjects")
+    end, { desc = "Select around conditional" })
+    map({ "x", "o" }, "ii", function()
+      select("@conditional.inner", "textobjects")
+    end, { desc = "Select inside conditional" })
+
+    -- Loops
+    map({ "x", "o" }, "al", function()
+      select("@loop.outer", "textobjects")
+    end, { desc = "Select around loop" })
+    map({ "x", "o" }, "il", function()
+      select("@loop.inner", "textobjects")
+    end, { desc = "Select inside loop" })
+
+    -- Movement keymaps
+    -- Jump to next/previous function
+    map({ "n", "x", "o" }, "]f", function()
+      move.goto_next_start("@function.outer", "textobjects")
+    end, { desc = "Next function start" })
+    map({ "n", "x", "o" }, "]F", function()
+      move.goto_next_end("@function.outer", "textobjects")
+    end, { desc = "Next function end" })
+    map({ "n", "x", "o" }, "[f", function()
+      move.goto_previous_start("@function.outer", "textobjects")
+    end, { desc = "Previous function start" })
+    map({ "n", "x", "o" }, "[F", function()
+      move.goto_previous_end("@function.outer", "textobjects")
+    end, { desc = "Previous function end" })
+
+    -- Jump to next/previous class
+    map({ "n", "x", "o" }, "]c", function()
+      move.goto_next_start("@class.outer", "textobjects")
+    end, { desc = "Next class start" })
+    map({ "n", "x", "o" }, "]C", function()
+      move.goto_next_end("@class.outer", "textobjects")
+    end, { desc = "Next class end" })
+    map({ "n", "x", "o" }, "[c", function()
+      move.goto_previous_start("@class.outer", "textobjects")
+    end, { desc = "Previous class start" })
+    map({ "n", "x", "o" }, "[C", function()
+      move.goto_previous_end("@class.outer", "textobjects")
+    end, { desc = "Previous class end" })
+
+    -- Jump to next/previous parameter
+    map({ "n", "x", "o" }, "]a", function()
+      move.goto_next_start("@parameter.inner", "textobjects")
+    end, { desc = "Next parameter" })
+    map({ "n", "x", "o" }, "[a", function()
+      move.goto_previous_start("@parameter.inner", "textobjects")
+    end, { desc = "Previous parameter" })
+  end,
+}
