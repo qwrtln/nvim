@@ -16,10 +16,11 @@ return {
       },
     }
 
+    ------------------------
+    -- SELECTION MAPPINGS --
+    ------------------------
     local select = require("nvim-treesitter-textobjects.select").select_textobject
-    local move = require("nvim-treesitter-textobjects.move")
 
-    -- Text object selections
     -- Functions
     map({ "x", "o" }, "af", function()
       select("@function.outer", "textobjects")
@@ -68,7 +69,11 @@ return {
       select("@loop.inner", "textobjects")
     end, { desc = "Select inside loop" })
 
-    -- Movement keymaps
+    -----------------------
+    -- MOVEMENT MAPPINGS --
+    -----------------------
+    local move = require("nvim-treesitter-textobjects.move")
+
     -- Jump to next/previous function
     map({ "n", "x", "o" }, "]f", function()
       move.goto_next_start("@function.outer", "textobjects")
@@ -104,5 +109,34 @@ return {
     map({ "n", "x", "o" }, "[a", function()
       move.goto_previous_start("@parameter.inner", "textobjects")
     end, { desc = "Previous parameter" })
+
+    -------------------
+    -- SWAP MAPPINGS --
+    -------------------
+    local swap = require("nvim-treesitter-textobjects.swap")
+
+    -- Swap node under cursor
+    map("n", "<A-a>", function()
+      swap.swap_previous("@parameter.inner")
+    end, { desc = "Swap parameter left" })
+    map("n", "<A-s>", function()
+      swap.swap_next("@parameter.inner")
+    end, { desc = "Swap parameter right" })
+
+    -------------------------------
+    -- MAKE MOVEMENTS REPEATABLE --
+    -------------------------------
+    local repeatable_move = require("nvim-treesitter-textobjects.repeatable_move")
+
+    -- Repeat movement with ; and ,
+    -- Ensure ; goes forward and , goes backward regardless of the last direction
+    map({ "n", "x", "o" }, ";", repeatable_move.repeat_last_move_next)
+    map({ "n", "x", "o" }, ",", repeatable_move.repeat_last_move_previous)
+
+    -- Make builtin f, F, t, T also repeatable with ; and ,
+    map({ "n", "x", "o" }, "f", repeatable_move.builtin_f_expr, { expr = true })
+    map({ "n", "x", "o" }, "F", repeatable_move.builtin_F_expr, { expr = true })
+    map({ "n", "x", "o" }, "t", repeatable_move.builtin_t_expr, { expr = true })
+    map({ "n", "x", "o" }, "T", repeatable_move.builtin_T_expr, { expr = true })
   end,
 }

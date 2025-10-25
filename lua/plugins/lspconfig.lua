@@ -1,3 +1,10 @@
+local map = vim.keymap.set
+
+map("n", "<leader>r", vim.lsp.buf.rename)
+map("n", "gd", vim.lsp.buf.definition)
+map("n", "gD", vim.lsp.buf.declaration)
+map("n", "gr", vim.lsp.buf.references)
+
 vim.diagnostic.config {
   virtual_text = false,
   signs = {
