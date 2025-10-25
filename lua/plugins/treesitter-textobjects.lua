@@ -38,10 +38,10 @@ return {
     end, { desc = "Select inside class" })
 
     -- Parameters
-    map({ "x", "o" }, "aa", function()
+    map({ "x", "o" }, "ap", function()
       select("@parameter.outer", "textobjects")
     end, { desc = "Select around parameter" })
-    map({ "x", "o" }, "ia", function()
+    map({ "x", "o" }, "ip", function()
       select("@parameter.inner", "textobjects")
     end, { desc = "Select inside parameter" })
 
@@ -68,6 +68,33 @@ return {
     map({ "x", "o" }, "il", function()
       select("@loop.inner", "textobjects")
     end, { desc = "Select inside loop" })
+
+    -- Assignments
+    map({ "x", "o" }, "aa", function()
+      select("@assignment.outer", "textobjects")
+    end, { desc = "Select around assignment" })
+    map({ "x", "o" }, "ia", function()
+      select("@assignment.inner", "textobjects")
+    end, { desc = "Select inside assignment" })
+    map({ "x", "o" }, "la", function()
+      select("@assignment.lhs", "textobjects")
+    end, { desc = "Select left side of assignment (key)" })
+    map({ "x", "o" }, "ra", function()
+      select("@assignment.rhs", "textobjects")
+    end, { desc = "Select right side of assignment (value)" })
+
+    -- Comments
+    map({ "x", "o" }, "a/", function()
+      select("@comment.outer", "textobjects")
+    end, { desc = "Select around comment" })
+    map({ "x", "o" }, "i/", function()
+      select("@comment.inner", "textobjects")
+    end, { desc = "Select inside comment" })
+
+    -- Numbers
+    map({ "x", "o" }, "in", function()
+      select("@number.inner", "textobjects")
+    end, { desc = "Select number" })
 
     -----------------------
     -- MOVEMENT MAPPINGS --
@@ -110,6 +137,22 @@ return {
       move.goto_previous_start("@parameter.inner", "textobjects")
     end, { desc = "Previous parameter" })
 
+    -- Jump to next/previous assignment
+    map({ "n", "x", "o" }, "]a", function()
+      move.goto_next_start("@assignment.outer", "textobjects")
+    end, { desc = "Next assignment" })
+    map({ "n", "x", "o" }, "[a", function()
+      move.goto_previous_start("@assignment.outer", "textobjects")
+    end, { desc = "Previous assignment" })
+
+    -- Jump to next/previous comment
+    map({ "n", "x", "o" }, "]/", function()
+      move.goto_next_start("@comment.outer", "textobjects")
+    end, { desc = "Next comment" })
+    map({ "n", "x", "o" }, "[/", function()
+      move.goto_previous_start("@comment.outer", "textobjects")
+    end, { desc = "Previous comment" })
+
     -------------------
     -- SWAP MAPPINGS --
     -------------------
@@ -130,8 +173,8 @@ return {
 
     -- Repeat movement with ; and ,
     -- Ensure ; goes forward and , goes backward regardless of the last direction
-    map({ "n", "x", "o" }, ";", repeatable_move.repeat_last_move_next)
-    map({ "n", "x", "o" }, ",", repeatable_move.repeat_last_move_previous)
+    map({ "n", "x", "o" }, ";", repeatable_move.repeat_last_move)
+    map({ "n", "x", "o" }, ",", repeatable_move.repeat_last_move_opposite)
 
     -- Make builtin f, F, t, T also repeatable with ; and ,
     map({ "n", "x", "o" }, "f", repeatable_move.builtin_f_expr, { expr = true })
