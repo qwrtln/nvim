@@ -116,12 +116,12 @@ return {
     local swap = require("nvim-treesitter-textobjects.swap")
 
     -- Swap node under cursor
-    vim.keymap.set("n", "<leader>a", function()
+    map("n", "<A-a>", function()
+      swap.swap_previous("@parameter.inner")
+    end, { desc = "Swap parameter left" })
+    map("n", "<A-s>", function()
       swap.swap_next("@parameter.inner")
-    end)
-    vim.keymap.set("n", "<leader>s", function()
-      swap.swap_previous("@parameter.outer")
-    end)
+    end, { desc = "Swap parameter right" })
 
     -------------------------------
     -- MAKE MOVEMENTS REPEATABLE --
