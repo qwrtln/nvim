@@ -4,6 +4,7 @@ vim.lsp.config("lua_ls", {
       diagnostics = {
         globals = { "vim" },
       },
+      telemetry = { enable = false },
     },
   },
 })
