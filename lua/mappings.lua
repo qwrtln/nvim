@@ -29,6 +29,9 @@ map("n", "<leader>t", "<cmd>vsp<CR><cmd>terminal<CR>i")
 map("n", "<C-\\>", "gcc", { remap = true })
 map("x", "<C-\\>", "gc", { remap = true })
 
+-- clearing highlights
+map("n", "<leader>h", "<cmd>nohlsearch<CR>")
+
 -- toggle diff mode
 local function toggle_diff()
   if vim.wo.diff then
