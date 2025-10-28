@@ -1,15 +1,15 @@
 local map = vim.keymap.set
+local projects_root_path = "~/Workspace"
 
 map("n", "<leader>f", "<cmd>Telescope find_files<CR>")
 map("n", "<leader>g", "<cmd>Telescope live_grep<CR>")
 map("n", "<leader>b", "<cmd>Telescope buffers<CR>")
 map("n", "<leader>F", function()
-  local path = "~/Workspace"
-  vim.notify("Searching in " .. path, vim.log.levels.WARN, {
+  vim.notify("Searching in " .. projects_root_path, vim.log.levels.WARN, {
     title = "Multi-project search 🔎",
   })
   require("telescope.builtin").find_files {
-    cwd = vim.fn.expand(path),
+    cwd = vim.fn.expand(projects_root_path),
     hidden = true,
     find_command = {
       "fd",
