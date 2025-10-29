@@ -76,10 +76,10 @@ return {
     map({ "x", "o" }, "ia", function()
       select("@assignment.inner", "textobjects")
     end, { desc = "Select inside assignment" })
-    map({ "x", "o" }, "la", function()
+    map({ "x", "o" }, "a<", function()
       select("@assignment.lhs", "textobjects")
     end, { desc = "Select left side of assignment (key)" })
-    map({ "x", "o" }, "ra", function()
+    map({ "x", "o" }, "a>", function()
       select("@assignment.rhs", "textobjects")
     end, { desc = "Select right side of assignment (value)" })
 
