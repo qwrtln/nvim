@@ -12,6 +12,12 @@ return {
         winblend = 0,
       },
     },
+    confirmation = {
+      border = "rounded",
+      win_options = {
+        winblend = 0,
+      },
+    },
   },
   config = function(_, opts)
     local oil = require("oil")
