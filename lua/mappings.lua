@@ -32,6 +32,10 @@ map("x", "<C-\\>", "gc", { remap = true })
 -- clearing highlights
 map("n", "<leader>h", "<cmd>nohlsearch<CR>")
 
+-- diagnostics
+map("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })
+map("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagnostic message" })
+
 -- toggle diff mode
 local function toggle_diff()
   if vim.wo.diff then
