@@ -8,6 +8,7 @@ local options = {
   hidden = true,                           -- required to keep multiple buffers and open multiple buffers
   hlsearch = true,                         -- highlight all matches on previous search pattern
   ignorecase = true,                       -- required for smartcase to work
+  inccommand = 'split',                    -- show incremental substitution
   mouse = "a",                             -- enable mouse in all modes
   pumheight = 10,                          -- pop up menu height
   showmode = false,                        -- included in statusline
@@ -35,6 +36,8 @@ local options = {
   guifont = "monospace:h17",               -- the font used in graphical neovim applications
   whichwrap = "<,>,[,],h,l"                -- which "horizontal" keys should wrap to next/previous line
 }
+
+vim.g.have_nerd_font = true
 
 vim.opt.shortmess:append("c")              -- don't give |ins-completion-menu| messages
 vim.opt.iskeyword:append("-")              -- hyphenated words recognized by searches
