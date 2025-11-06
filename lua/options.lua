@@ -8,7 +8,6 @@ local options = {
   hidden = true,                           -- required to keep multiple buffers and open multiple buffers
   hlsearch = true,                         -- highlight all matches on previous search pattern
   ignorecase = true,                       -- required for smartcase to work
-  inccommand = 'split',                    -- show incremental substitution
   mouse = "a",                             -- enable mouse in all modes
   pumheight = 10,                          -- pop up menu height
   showmode = false,                        -- included in statusline
