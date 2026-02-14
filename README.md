@@ -40,15 +40,6 @@ Then, run `:Lazy` to install plugins.
  - `<C-\>` (un)comments either current line, or visually selected block of code 🔎
  - `m` activates leap motion for quick navigation within visible text
 
-### 🤖 AI Assistance
-
-Codeium suggests snippets while typing, thanks to `neocodeium` plugin.
-Use the following:
- - `<A-f>` to accept the suggestion
- - `<A-r>` to cycle through the suggestions
- - `<A-e>` to cycle backwards
- - `<A-q>` to clear suggestions
-
 ### 📖 Status Line
 
 Using [lualine](https://github.com/nvim-lualine/lualine.nvim), I built a status line which also includes tabs, and shows some other goodies:
@@ -68,7 +59,6 @@ The colors are hardcoded to work independently of the colorscheme, and stay cons
  - [gitsigns](https://github.com/lewis6991/gitsigns.nvim) - git integration
  - [leap](https://github.com/ggandor/leap.nvim) - motion plugin
  - [lualine](https://github.com/nvim-lualine/lualine.nvim) - statusline
- - [neocodeium](https://github.com/monkoose/neocodeium) - AI code suggestions
  - [neogit](https://github.com/NeogitOrg/neogit) - git interface
  - [neoscroll](https://github.com/karb94/neoscroll.nvim) - smooth scrolling
  - [noice](https://github.com/folke/noice.nvim) - better UI messages
