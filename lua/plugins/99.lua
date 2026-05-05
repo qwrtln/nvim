@@ -8,9 +8,9 @@ return {
     -- logging mechanisms within 99.  This is for more debugging purposes
     local cwd = vim.uv.cwd()
     local basename = vim.fs.basename(cwd)
-    _99.setup({
+    _99.setup {
       provider = _99.Providers.ClaudeCodeProvider,
-      model = "claude-opus-4-6",
+      model = "claude-opus-4-7",
       logger = {
         level = _99.DEBUG,
         path = "/tmp/" .. basename .. ".99.debug",
@@ -75,7 +75,7 @@ return {
       md_files = {
         "CLAUDE.md",
       },
-    })
+    }
 
     -- take extra note that i have visual selection only in v mode
     -- technically whatever your last visual selection is, will be used
