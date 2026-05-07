@@ -3,7 +3,7 @@ local projects_root_path = "~/Workspace"
 
 map("n", "<leader>f", "<cmd>Telescope find_files<CR>")
 map("n", "<leader>g", "<cmd>Telescope live_grep<CR>")
-map("n", "<leader>b", "<cmd>Telescope buffers<CR>")
+map("n", "<leader>b", "<cmd>Telescope git_branches<CR>")
 map("n", "<leader>F", function()
   vim.notify("Searching in " .. projects_root_path, vim.log.levels.WARN, {
     title = "Multi-project search 🔎",
