@@ -1,7 +1,10 @@
 return {
-  "coder/claudecode.nvim",
+  "qwrtln/claudecode.nvim",
   dependencies = { "folke/snacks.nvim" },
   config = true,
+  opts = {
+    diff_opts = { wrap = true },
+  },
   keys = {
     { "<leader>a", nil, desc = "AI/Claude Code" },
     { "<leader>ac", "<cmd>ClaudeCode<cr>", desc = "Toggle Claude" },
