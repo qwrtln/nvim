@@ -6,7 +6,7 @@ return {
   ---@type ibl.config
   opts = {
     scope = {
-      highlight = "IndentBlanklineScpe",
+      highlight = "IndentBlanklineScope",
     },
   },
 }

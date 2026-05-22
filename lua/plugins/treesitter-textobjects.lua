@@ -29,14 +29,6 @@ return {
       select("@function.inner", "textobjects")
     end, { desc = "Select inside function" })
 
-    -- Classes
-    map({ "x", "o" }, "ac", function()
-      select("@class.outer", "textobjects")
-    end, { desc = "Select around class" })
-    map({ "x", "o" }, "ic", function()
-      select("@class.inner", "textobjects")
-    end, { desc = "Select inside class" })
-
     -- Parameters
     map({ "x", "o" }, "ap", function()
       select("@parameter.outer", "textobjects")
@@ -128,14 +120,6 @@ return {
     map({ "n", "x", "o" }, "[C", function()
       move.goto_previous_end("@class.outer", "textobjects")
     end, { desc = "Previous class end" })
-
-    -- Jump to next/previous parameter
-    map({ "n", "x", "o" }, "]a", function()
-      move.goto_next_start("@parameter.inner", "textobjects")
-    end, { desc = "Next parameter" })
-    map({ "n", "x", "o" }, "[a", function()
-      move.goto_previous_start("@parameter.inner", "textobjects")
-    end, { desc = "Previous parameter" })
 
     -- Jump to next/previous assignment
     map({ "n", "x", "o" }, "]a", function()

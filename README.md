@@ -33,12 +33,12 @@ Then, run `:Lazy` to install plugins.
  - `<Space>;` opens command mode (`:`) - more comfortable than Shift+;
  - `<Space>g` opens a popup window with recursive grep search in the current directory. Blazing fast ⚡ thanks to `ripgrep`
  - `<Space>f` does the same but with file names using Telescope 🔥
- - `<Space>t` opens a terminal in vertical split on the right already in insert mode. Ready to type commands 👨‍💻
+ - `<A-n>` opens a terminal in vertical split on the right already in insert mode. Ready to type commands 👨‍💻
  - `<Space>n` opens neogit 🌳
  - `<Space>o` opens file manager in a floating window 🛢️
  - `<C-s>` shows git diff of the current line thanks to `gitsigns`
  - `<C-\>` (un)comments either current line, or visually selected block of code 🔎
- - `m` activates leap motion for quick navigation within visible text
+ - `m` activates leap motion for quick navigation within visible text (replaces built-in `m{a-z}` mark setting)
 
 ### 📖 Status Line
 

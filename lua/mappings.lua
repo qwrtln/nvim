@@ -8,10 +8,6 @@ map("", "<CR>", "<Leader>", { remap = true })
 map("n", "<leader>;", ":")
 map("v", "<leader>;", ":")
 
--- easier than reaching for escape
-map("i", "<A-n>", "<Esc>")
-map("v", "<A-n>", "<Esc>")
-
 -- navigate tabs
 map("n", "<C-h>", "gT")
 map("n", "<C-l>", "gt")
@@ -33,8 +29,8 @@ map("x", "<C-\\>", "gc", { remap = true })
 map("n", "<leader>h", "<cmd>nohlsearch<CR>")
 
 -- diagnostics
-map("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })
-map("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagnostic message" })
+map("n", "[d", function() vim.diagnostic.jump({ count = -1, float = true }) end, { desc = "Go to previous [D]iagnostic message" })
+map("n", "]d", function() vim.diagnostic.jump({ count = 1, float = true }) end, { desc = "Go to next [D]iagnostic message" })
 
 -- toggle diff mode
 local function toggle_diff()
