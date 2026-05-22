@@ -16,7 +16,6 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
-
 return {
   "hrsh7th/nvim-cmp",
   event = { "BufEnter", "BufReadPre", "BufNewFile" },

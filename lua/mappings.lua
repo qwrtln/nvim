@@ -29,8 +29,12 @@ map("x", "<C-\\>", "gc", { remap = true })
 map("n", "<leader>h", "<cmd>nohlsearch<CR>")
 
 -- diagnostics
-map("n", "[d", function() vim.diagnostic.jump({ count = -1, float = true }) end, { desc = "Go to previous [D]iagnostic message" })
-map("n", "]d", function() vim.diagnostic.jump({ count = 1, float = true }) end, { desc = "Go to next [D]iagnostic message" })
+map("n", "[d", function()
+  vim.diagnostic.jump { count = -1, float = true }
+end, { desc = "Go to previous [D]iagnostic message" })
+map("n", "]d", function()
+  vim.diagnostic.jump { count = 1, float = true }
+end, { desc = "Go to next [D]iagnostic message" })
 
 -- toggle diff mode
 local function toggle_diff()
