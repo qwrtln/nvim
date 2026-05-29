@@ -185,6 +185,7 @@ return {
 
     -- `:` cmdline setup.
     cmp.setup.cmdline(":", {
+      completion = { keyword_length = 3 },
       mapping = cmp.mapping.preset.cmdline(),
       sources = cmp.config.sources({
         { name = "path" },
