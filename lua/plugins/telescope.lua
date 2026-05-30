@@ -1,5 +1,5 @@
 local map = vim.keymap.set
-local projects_root_path = "~/Workspace"
+local projects_root_path = vim.g.projects_root or "~/Workspace"
 
 map("n", "<leader>f", "<cmd>Telescope find_files<CR>")
 map("n", "<leader>g", "<cmd>Telescope live_grep<CR>")

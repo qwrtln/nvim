@@ -16,18 +16,6 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
-vim.api.nvim_create_autocmd("CmdlineEnter", {
-  callback = function()
-    require("cmp").setup { enabled = false }
-  end,
-})
-
-vim.api.nvim_create_autocmd("CmdlineLeave", {
-  callback = function()
-    require("cmp").setup { enabled = true }
-  end,
-})
-
 return {
   "hrsh7th/nvim-cmp",
   event = { "BufEnter", "BufReadPre", "BufNewFile" },
@@ -142,23 +130,22 @@ return {
       },
       sorting = {
         priority_weight = 1.0,
+        comparators = {
+          compare.offset,
+          compare.exact,
+          compare.recently_used,
+          function(entry1, entry2) -- sort by compare kind (Variable, Function etc)
+            local kind1 = modified_kind(entry1:get_kind())
+            local kind2 = modified_kind(entry2:get_kind())
+            if kind1 ~= kind2 then
+              return kind1 - kind2 < 0
+            end
+          end,
+          compare.score,
+          require("cmp-under-comparator").under,
+          compare.kind,
+        },
       },
-      comparators = {
-        compare.offset,
-        compare.exact,
-        compare.recently_used,
-        function(entry1, entry2) -- sort by compare kind (Variable, Function etc)
-          local kind1 = modified_kind(entry1:get_kind())
-          local kind2 = modified_kind(entry2:get_kind())
-          if kind1 ~= kind2 then
-            return kind1 - kind2 < 0
-          end
-        end,
-        compare.score,
-        require("cmp-under-comparator").under,
-        compare.kind,
-      },
-      min_length = 0, -- allow for `from package import _` in Python
       mapping = cmp.mapping.preset.insert {
         ["<CR>"] = cmp.mapping.confirm { select = false }, -- do not select first item
         ["<C-e>"] = cmp.mapping.abort(),
@@ -198,6 +185,7 @@ return {
 
     -- `:` cmdline setup.
     cmp.setup.cmdline(":", {
+      completion = { keyword_length = 3 },
       mapping = cmp.mapping.preset.cmdline(),
       sources = cmp.config.sources({
         { name = "path" },

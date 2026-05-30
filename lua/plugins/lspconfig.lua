@@ -24,6 +24,7 @@ vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
     vim.diagnostic.open_float(nil, {
       border = "rounded",
       focus = false,
+      scope = "cursor",
     })
   end,
 })
