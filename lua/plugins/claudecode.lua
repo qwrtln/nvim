@@ -1,5 +1,5 @@
 return {
-  url = "git@github.com:qwrtln/claudecode.nvim.git",
+  "claudecode.nvim",
   dependencies = { "folke/snacks.nvim" },
   config = true,
   opts = {
