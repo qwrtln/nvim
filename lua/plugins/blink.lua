@@ -35,7 +35,7 @@ local filetypes_without_autocomplete = {
 
 return {
   "saghen/blink.cmp",
-  version = "*", -- use a release tag, downloads prebuilt fuzzy binary
+  version = "*",
   event = { "InsertEnter", "CmdlineEnter" },
   dependencies = {
     "L3MON4D3/LuaSnip",
@@ -54,8 +54,6 @@ return {
       kind_icons = kind_icons,
     },
 
-    -- <CR> confirm (no preselect), <C-e> abort
-    -- <Tab> cycle forward + snippet jump, <Shift><Tab> cycle backward
     keymap = {
       preset = "none",
       ["<CR>"] = { "accept", "fallback" },
@@ -114,12 +112,17 @@ return {
             end,
           },
         },
+        cmdline = {
+          module = "blink.cmp.sources.cmdline",
+          min_keyword_length = 3,
+        },
       },
     },
 
     -- cmdline: blink defaults handle `:` `/` `?` (path + cmdline sources)
     cmdline = {
       keymap = { preset = "cmdline" },
+      sources = { "cmdline" },
       completion = {
         menu = { auto_show = true },
       },

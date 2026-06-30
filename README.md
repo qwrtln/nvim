@@ -6,7 +6,8 @@ This is the [`neovim`](https://github.com/neovim/neovim) configuration I use bot
 
 Make sure you have installed the following:
  - git
- - [ripgrep](https://github.com/BurntSushi/ripgrep) (for Telescope file/text search)
+ - [ripgrep](https://github.com/BurntSushi/ripgrep) (for Snacks text search)
+ - [fd](https://github.com/sharkdp/fd) (for multi-project file search)
  - [NerdFont](https://www.nerdfonts.com/) (for icons)
 
 Optionally, you can install LSPs:
@@ -32,7 +33,9 @@ Then, run `:Lazy` to install plugins.
  - `<Space>` (or `<Enter>`) is the leader key - optimized for both regular keyboards and ergonomic layouts with thumb clusters
  - `<Space>;` opens command mode (`:`) - more comfortable than Shift+;
  - `<Space>g` opens a popup window with recursive grep search in the current directory. Blazing fast ⚡ thanks to `ripgrep`
- - `<Space>f` does the same but with file names using Telescope 🔥
+ - `<Space>f` does the same but with file names using the Snacks picker 🔥
+ - `<Space>F` searches files across all projects under `~/Workspace` (configurable via `vim.g.projects_root`) using `fd` 🗂️
+ - `<Space>b` opens a git branch picker 🌿
  - `<A-n>` opens a terminal in vertical split on the right already in insert mode. Ready to type commands 👨‍💻
  - `<Space>n` opens neogit 🌳
  - `<Space>o` opens file manager in a floating window 🛢️
@@ -54,7 +57,7 @@ The colors are hardcoded to work independently of the colorscheme, and stay cons
 
 ### 📋 List of Plugins
 
- - [cmp](https://github.com/hrsh7th/nvim-cmp) - autocompletion
+ - [blink.cmp](https://github.com/saghen/blink.cmp) - autocompletion
  - [conform](https://github.com/stevearc/conform.nvim) - formatting
  - [gitsigns](https://github.com/lewis6991/gitsigns.nvim) - git integration
  - [leap](https://github.com/ggandor/leap.nvim) - motion plugin
@@ -65,7 +68,7 @@ The colors are hardcoded to work independently of the colorscheme, and stay cons
  - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) - LSP configuration
  - [oil](https://github.com/stevearc/oil.nvim) - file explorer
  - [smear-cursor](https://github.com/sphamba/smear-cursor.nvim) - cursor animation
- - [telescope](https://github.com/nvim-telescope/telescope.nvim) - fuzzy finder
+ - [snacks](https://github.com/folke/snacks.nvim) - picker / fuzzy finder
  - [tokyonight](https://github.com/folke/tokyonight.nvim) - colorscheme
  - [treesitter](https://github.com/nvim-treesitter/nvim-treesitter) - syntax highlighting
 
