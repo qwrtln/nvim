@@ -2,6 +2,8 @@ local highlight = vim.api.nvim_set_hl
 
 return {
   "folke/tokyonight.nvim",
+  lazy = false,
+  priority = 1000,
   opts = {
     transparent = true,
     style = "night",

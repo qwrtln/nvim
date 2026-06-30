@@ -11,6 +11,11 @@ return {
     },
     routes = {
       {
+        -- pyright re-analyzes on every keystroke and spams progress;
+        filter = { event = "lsp", kind = "progress", find = "[Pp]yright" },
+        opts = { skip = true },
+      },
+      {
         filter = {
           any = {
             { event = "msg_show", kind = "", find = "fewer lines" },

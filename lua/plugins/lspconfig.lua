@@ -32,6 +32,12 @@ vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
 return {
   "neovim/nvim-lspconfig",
   config = function()
+    -- advertise blink.cmp completion capabilities to every server
+    local ok_blink, blink = pcall(require, "blink.cmp")
+    if ok_blink then
+      vim.lsp.config("*", { capabilities = blink.get_lsp_capabilities() })
+    end
+
     local path = vim.fn.stdpath("config") .. "/lua/language-servers"
     local files = vim.fn.readdir(path)
 
