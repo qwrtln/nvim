@@ -38,6 +38,9 @@ local options = {
 
 vim.g.have_nerd_font = true
 
+-- no python remote plugins; skip provider host probe (~40ms shell spawn on .py files)
+vim.g.loaded_python3_provider = 0
+
 vim.opt.shortmess:append("c")              -- don't give |ins-completion-menu| messages
 vim.opt.iskeyword:append("-")              -- hyphenated words recognized by searches
 -- stylua: ignore end
