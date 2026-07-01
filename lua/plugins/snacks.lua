@@ -57,9 +57,11 @@ return {
           layout = { preset = "telescope" },
         },
         grep = {
+          hidden = true,
           layout = { preset = "ivy" },
         },
         grep_word = {
+          hidden = true,
           layout = { preset = "ivy" },
         },
         git_branches = {
