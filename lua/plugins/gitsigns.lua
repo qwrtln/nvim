@@ -13,4 +13,15 @@ return {
       delay = 300,
     },
   },
+  config = function(_, opts)
+    local plugin = require("gitsigns")
+    plugin.setup(opts)
+
+    map("n", "]h", function()
+      plugin.nav_hunk("next")
+    end, { desc = "Next Git hunk" })
+    map("n", "[h", function()
+      plugin.nav_hunk("prev")
+    end, { desc = "Previous Git hunk" })
+  end,
 }
